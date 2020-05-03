@@ -1,0 +1,41 @@
+version: "3.7"
+services:
+
+  db:
+    container_name: postgres_test
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: database
+    volumes:
+    - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  app:
+    container_name: node_test_app
+    build: ./
+    volumes:
+      - ./:/var/www/app
+    ports:
+      - 3000:3000
+    links:
+      - redis
+      - db
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - REDIS_URL=redis://cache
+    command:
+      sh -c 'npm i && npm run dev'
+  redis:
+    image: redis
+    container_name: cache
+    ports:
+    - 6379:6379
+#  web:
+#    image: test-docker-example
+#    depends_on:
+#      - db
+#    ports:
+#      - '3000:3000'

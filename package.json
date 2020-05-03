@@ -1,0 +1,76 @@
+{
+  "name": "express-pg-redis-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "nodemon index.ts",
+    "start": "npx pm2 start pm2.yaml",
+    "test": "jest --coverage --verbose"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "keywords": [],
+  "author": "danielsadovskiy",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcrypt": "^4.0.1",
+    "connect-redis": "^4.0.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.0",
+    "pg": "^8.0.3",
+    "pm2": "^4.4.0",
+    "redis": "^3.0.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "sql-template-strings": "^2.2.2",
+    "supertest": "^4.0.2",
+    "swagger-ui-express": "^4.1.4",
+    "util": "^0.12.2",
+    "uuid": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/compression": "^1.7.0",
+    "@types/connect-redis": "0.0.13",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "@types/hapi__joi": "^16.0.12",
+    "@types/jest": "^25.2.1",
+    "@types/jsonwebtoken": "^8.3.9",
+    "@types/node": "^13.13.2",
+    "@types/node-fetch": "^2.5.6",
+    "@types/pg": "^7.14.3",
+    "@types/redis": "^2.8.18",
+    "@types/request-promise": "^4.1.46",
+    "@types/swagger-ui-express": "^4.1.2",
+    "@types/uuid": "^7.0.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "jest": "^25.4.0",
+    "nodemon": "^2.0.3",
+    "ts-jest": "^25.4.0",
+    "ts-node": "^8.8.2",
+    "tsc-watch": "^4.2.3",
+    "tslint": "^6.1.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
+  }
+}
